@@ -45,3 +45,8 @@ venv.bak/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Ignore generated report documents
+*.docx
+*.pdf
+*.doc
