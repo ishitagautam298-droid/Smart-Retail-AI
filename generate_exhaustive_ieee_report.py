@@ -293,7 +293,7 @@ toc_items = [
     "VI.   Module 3: Customer Sentiment Analysis (NLP) & Source Code",
     "VII.  Module 4: Retail Support Chatbot Intent Engine & Source Code",
     "VIII. Module 5: FastAPI REST Microservices Backend & Source Code",
-    "IX.   Interactive OpenAPI / Swagger UI & API Response Documentation",
+    "IX.   Interactive OpenAPI / Swagger UI & Live Ngrok API Screenshots",
     "X.    REST API Endpoints Specification & Benchmarking Table",
     "XI.   Ethical AI, Privacy Regulations & Biometric Security",
     "XII.  GitHub Repository Structure & Deployment Guide",
@@ -533,11 +533,11 @@ with open("models/chatbot_vectorizer.pkl", "wb") as f: pickle.dump(cb_vectorizer
 with open("models/label_encoder.pkl", "wb") as f: pickle.dump(label_encoder, f)""", title="04_Chatbot_Module.ipynb Code")
 
 # ==============================================================================
-# 9. MODULE 5 & API PHOTOS / UI SCREENSHOTS
+# 9. MODULE 5 & ACTUAL NGROK API PHOTOS / SCREENSHOTS
 # ==============================================================================
 
 add_heading("VIII. Module 5: FastAPI REST Microservices Backend", level=1)
-add_body("Module 5 exposes all model inference logic via asynchronous FastAPI endpoints. Below is the production backend code and OpenAPI interactive UI documentation.")
+add_body("Module 5 exposes all model inference logic via asynchronous FastAPI endpoints. Below is the production backend latency benchmarks and real live Swagger UI interface screenshots.")
 
 img_m5 = "/Users/ishitagautam/.gemini/antigravity/scratch/Smart-Retail-AI/images/api_mesh.png"
 if os.path.exists(img_m5):
@@ -551,31 +551,31 @@ if os.path.exists(img_m5):
     r_cap = p_cap.add_run("Fig. 6. FastAPI Endpoint Average Inference Latency (ms)")
     r_cap.font.name = 'Times New Roman'; r_cap.font.size = Pt(9.5); r_cap.italic = True
 
-add_heading("IX. Interactive OpenAPI / Swagger UI & API Response Documentation", level=1)
-add_body("The API provides an interactive Swagger UI documentation interface accessible at http://localhost:8000/docs. Below are screenshots of the interactive OpenAPI UI and sample JSON request/response payloads.")
+add_heading("IX. Interactive OpenAPI / Swagger UI & Live Ngrok API Screenshots", level=1)
+add_body("The API is served live over an Ngrok tunnel (specks-subject-probation.ngrok-free.dev) with interactive Swagger UI documentation at /docs. Below are actual screenshots demonstrating live endpoint parameter entry, Curl execution, HTTP 200 OK responses, and JSON payload outputs.")
 
-img_swag = "/Users/ishitagautam/.gemini/antigravity/scratch/Smart-Retail-AI/images/api_docs_swagger.png"
-if os.path.exists(img_swag):
+img_real_swag1 = "/Users/ishitagautam/.gemini/antigravity/scratch/Smart-Retail-AI/images/real_ngrok_swagger_1.png"
+if os.path.exists(img_real_swag1):
     p_img = doc.add_paragraph()
     p_img.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run_img = p_img.add_run()
-    run_img.add_picture(img_swag, width=Inches(6.2))
+    run_img.add_picture(img_real_swag1, width=Inches(6.2))
     p_cap = doc.add_paragraph()
     p_cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p_cap.paragraph_format.space_after = Pt(12)
-    r_cap = p_cap.add_run("Fig. 7. FastAPI Swagger UI Interactive Endpoint Documentation (OpenAPI 3.0 at /docs)")
+    r_cap = p_cap.add_run("Fig. 7. Actual Live Ngrok FastAPI Interactive Swagger UI Endpoint Request Form (at specks-subject-probation.ngrok-free.dev/docs#/default/chatbot_chatbot_post)")
     r_cap.font.name = 'Times New Roman'; r_cap.font.size = Pt(9.5); r_cap.italic = True
 
-img_payload = "/Users/ishitagautam/.gemini/antigravity/scratch/Smart-Retail-AI/images/api_payloads_demo.png"
-if os.path.exists(img_payload):
+img_real_swag2 = "/Users/ishitagautam/.gemini/antigravity/scratch/Smart-Retail-AI/images/real_ngrok_swagger_2.png"
+if os.path.exists(img_real_swag2):
     p_img = doc.add_paragraph()
     p_img.alignment = WD_ALIGN_PARAGRAPH.CENTER
     run_img = p_img.add_run()
-    run_img.add_picture(img_payload, width=Inches(6.2))
+    run_img.add_picture(img_real_swag2, width=Inches(6.2))
     p_cap = doc.add_paragraph()
     p_cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
     p_cap.paragraph_format.space_after = Pt(12)
-    r_cap = p_cap.add_run("Fig. 8. Real-time REST API Request Payloads and JSON Outputs for /analyze-sentiment and /chatbot")
+    r_cap = p_cap.add_run("Fig. 8. Real-time Live Ngrok 200 OK Execution Response & Curl Command Output")
     r_cap.font.name = 'Times New Roman'; r_cap.font.size = Pt(9.5); r_cap.italic = True
 
 # ==============================================================================
@@ -678,4 +678,4 @@ add_callout(
 doc.save(OUTPUT_FILE)
 doc.save(DOWNLOADS_FILE)
 
-print(f"SUCCESS: Generated Exhaustive IEEE Document at:\n1. {OUTPUT_FILE}\n2. {DOWNLOADS_FILE}")
+print(f"SUCCESS: Generated Exhaustive IEEE Document with actual Ngrok screenshots at:\n1. {OUTPUT_FILE}\n2. {DOWNLOADS_FILE}")
