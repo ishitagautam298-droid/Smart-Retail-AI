@@ -1,0 +1,59 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hello",
+                "Hey"
+            ],
+            "responses": [
+                "Hello! How can I help you today?"
+            ]
+        },
+        {
+            "tag": "return_policy",
+            "patterns": [
+                "What is the return policy?",
+                "Can I return my product?",
+                "How many days do I have for return?"
+            ],
+            "responses": [
+                "Products can be returned within 30 days of delivery if they meet return conditions."
+            ]
+        },
+        {
+            "tag": "order_status",
+            "patterns": [
+                "Where is my order?",
+                "Track my order",
+                "Order status"
+            ],
+            "responses": [
+                "You can check your order status using your order ID."
+            ]
+        },
+        {
+            "tag": "payment_issue",
+            "patterns": [
+                "Payment failed",
+                "Problem with payment",
+                "Transaction failed"
+            ],
+            "responses": [
+                "Please check your payment method or try again after some time."
+            ]
+        },
+        {
+            "tag": "store_hours",
+            "patterns": [
+                "When is the store open?",
+                "Store timings",
+                "Opening hours"
+            ],
+            "responses": [
+                "Our store is open from 10 AM to 9 PM."
+            ]
+        }
+    ]
+}
